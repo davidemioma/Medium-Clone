@@ -80,18 +80,20 @@ const Post = ({ post }: Props) => {
 
         <CommentSection id={`${post._id}`} />
 
-        <div className="p-5 border max-w-2xl rounded-lg shadow shadow-yellow-500">
-          <h1 className="text-2xl font-bold pb-2 border-b">Comments</h1>
+        {post.comments.length > 0 && (
+          <div className="p-5 border max-w-2xl rounded-lg shadow shadow-yellow-500">
+            <h1 className="text-2xl font-bold pb-2 border-b">Comments</h1>
 
-          <div className="py-2 flex flex-col space-y-1.5">
-            {post.comments.map((item) => (
-              <p key={item._id}>
-                <span className="text-yellow-500">{item.name}</span>{" "}
-                {item.comment}
-              </p>
-            ))}
+            <div className="py-2 flex flex-col space-y-1.5">
+              {post.comments.map((item) => (
+                <p key={item._id}>
+                  <span className="text-yellow-500">{item.name}</span>{" "}
+                  {item.comment}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </main>
     </div>
   );
