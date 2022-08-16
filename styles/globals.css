@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply border outline-none shadow-md max-w-xl py-1 px-4 focus:ring-1 ring-yellow-500;
+  }
+}
